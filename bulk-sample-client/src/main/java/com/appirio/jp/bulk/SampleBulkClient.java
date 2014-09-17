@@ -34,7 +34,7 @@ public class SampleBulkClient {
 	private final static Logger logger = LoggerFactory.getLogger(SampleBulkClient.class);
 	public static void main(String[] args) throws AsyncApiException, ConnectionException, IOException{ 
 		
-		//properties
+		//properties for sfdc
 		String sobjectType = "Account";
 		String username = "tshiroo+mun1@appirio.com";
 		String password = "appirio123!" + "l1XCJDopFW6XEVPr3UJohVAu";
