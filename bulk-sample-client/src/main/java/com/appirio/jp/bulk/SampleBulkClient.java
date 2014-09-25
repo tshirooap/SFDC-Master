@@ -146,6 +146,7 @@ public class SampleBulkClient {
 			
 		} finally { 
 			tmpFile.delete();
+			br.close();
 		}
 		return batchInfos;
 	}
@@ -203,7 +204,7 @@ public class SampleBulkClient {
 		throws AsyncApiException, IOException	{ 
 		
 		for(BatchInfo b: batchInfoList) { 
-			CSVReader r = new CSVReader(connection.getBatchRequestInputStream(job.getId(), b.getId()));
+			CSVReader r = new CSVReader(connection.getBatchResultStream(job.getId(), b.getId()));
 			List<String> resultHeader = r.nextRecord();
 			int resultCols = resultHeader.size();
 			List<String> row;
